@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
+using Core.Interfaces;
 
 namespace Core.Specifications
 {
@@ -30,5 +27,12 @@ namespace Core.Specifications
         {
             Includes.Add(includeExpression);
         }
+
+        public List<string> IncludeStrings { get; } = new List<string>();
+        protected void AddInclude(string includeString)
+        {
+            IncludeStrings.Add(includeString);
+        }
+
     }
 }
